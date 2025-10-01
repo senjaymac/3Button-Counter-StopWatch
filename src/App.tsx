@@ -3,7 +3,6 @@ import Button from './components/Button';
 import CounterPage from './components/CounterPage';
 import StopWatch from './components/StopWatch';
 import AgeCounter from './components/AgeCounter';
-import TodoApp from './components/TodoList';
 import SimpleTodo from './components/SimpleTodo';
 import DogPicture from './components/DogPicture';
 
