@@ -1,0 +1,252 @@
+.app {
+  min-height: 100vh;
+  background: 
+    linear-gradient(90deg, transparent 1px, transparent 1px),
+    linear-gradient(0deg, transparent 1px, transparent 1px),
+    #000000;
+  background-size: 120px 120px;
+  background-image: 
+    linear-gradient(90deg, #ffd700 1px, transparent 1px),
+    linear-gradient(0deg, #ffd700 1px, transparent 1px);
+  animation: moveGrid 4s linear infinite;
+  font-family: 'Orbitron', monospace;
+}
+
+@keyframes moveGrid {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 120px 120px, 120px 120px; }
+}
+
+.app-header {
+  background: linear-gradient(90deg, var(--bee-card-bg), var(--bee-dark-bg));
+  border: 3px solid var(--bee-yellow);
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,215,0,0.3), transparent);
+  animation: scan 3s infinite;
+}
+
+@keyframes scan {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.app-header h1 {
+  color: var(--bee-yellow);
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 
+    0 0 5px var(--bee-yellow),
+    0 0 10px var(--bee-yellow),
+    0 0 15px var(--bee-dark-yellow);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px var(--bee-yellow), 0 0 10px var(--bee-yellow), 0 0 15px var(--bee-dark-yellow); }
+  to { text-shadow: 0 0 10px var(--bee-yellow), 0 0 20px var(--bee-yellow), 0 0 30px var(--bee-dark-yellow); }
+}
+
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.component-section {
+  background: var(--bee-card-bg);
+  border: 3px solid var(--bee-border);
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+
+
+.component-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+}
+
+.component-section h2 {
+  margin: 0 0 1.5rem 0;
+  color: var(--bee-yellow);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid var(--bee-yellow);
+  padding-bottom: 0.5rem;
+  text-shadow: 0 0 10px var(--bee-yellow);
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  padding: 0.75rem 1.5rem;
+  border: 3px solid;
+  background: var(--bee-black);
+  color: var(--bee-yellow);
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-group button:hover {
+  background: var(--bee-yellow);
+  color: var(--bee-black);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--bee-yellow);
+}
+
+.component-section p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;
+  color: var(--bee-yellow);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--bee-dark-yellow);
+}
+
+.component-section button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 3px solid var(--bee-yellow);
+  background: var(--bee-black);
+  color: var(--bee-yellow);
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.component-section button:hover {
+  background: var(--bee-yellow);
+  color: var(--bee-black);
+  box-shadow: 0 0 20px var(--bee-yellow);
+  transform: scale(1.05);
+}
+
+.component-section button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.component-section input {
+  background: var(--bee-black);
+  border: 3px solid var(--bee-yellow);
+  color: var(--bee-yellow);
+  padding: 0.5rem;
+  font-family: 'Orbitron', monospace;
+  margin: 0.5rem;
+}
+
+.component-section input:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--bee-yellow);
+}
+
+.component-section img {
+  border: 3px solid var(--bee-yellow);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Notes App Styles */
+.component-section .task-item {
+  border: 2px solid var(--bee-yellow);
+  background: var(--bee-black);
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+
+.component-section .task-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.component-section .task-text {
+  flex: 1;
+  color: var(--bee-yellow);
+  font-family: 'Orbitron', monospace;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.component-section .task-input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.component-section .task-input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.component-section .subtasks {
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  border-left: 2px solid var(--bee-yellow);
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .app-main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  
+  .app-header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  
+  .component-section {
+    padding: 1.5rem;
+  }
+  
+  .component-section .task-input-row {
+    flex-direction: column;
+  }
+  
+  .component-section .task-input {
+    min-width: auto;
+  }
+  
+  .component-section .subtasks {
+    margin-left: 1rem;
+  }
+}

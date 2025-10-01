@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+:root {
+  --bee-yellow: #FFD700;
+  --bee-dark-yellow: #FFA500;
+  --bee-black: #000000;
+  --bee-dark-bg: #1a1a1a;
+  --bee-card-bg: #2a2a2a;
+  --bee-border: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Orbitron', monospace;
+  background: var(--bee-black);
+  color: var(--bee-yellow);
+  min-height: 100vh;
+  image-rendering: pixelated;
+}
+
+#root {
+  width: 100%;
+}
