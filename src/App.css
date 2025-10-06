@@ -56,6 +56,40 @@
   animation: glow 2s ease-in-out infinite alternate;
 }
 
+.nav-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--bee-yellow);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--bee-yellow);
+  background: var(--bee-black);
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a:hover {
+  background: var(--bee-yellow);
+  color: var(--bee-black);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--bee-yellow);
+}
+
+.nav-links a:active {
+  transform: scale(0.95);
+}
+
 @keyframes glow {
   from { text-shadow: 0 0 5px var(--bee-yellow), 0 0 10px var(--bee-yellow), 0 0 15px var(--bee-dark-yellow); }
   to { text-shadow: 0 0 10px var(--bee-yellow), 0 0 20px var(--bee-yellow), 0 0 30px var(--bee-dark-yellow); }
